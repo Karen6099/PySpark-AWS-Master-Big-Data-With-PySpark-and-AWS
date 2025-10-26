@@ -1,6 +1,8 @@
 # PySpark-AWS-Master-Big-Data-With-PySpark-and-AWS
 
 This repository contains examples and tutorials for mastering big data processing with PySpark and AWS.
+https://www.udemy.com/course/pyspark-aws-master-big-data-with-pyspark-and-aws/
+Doing the PySpark course for starting my graduate role in the data science team
 
 ## Project Structure
 
@@ -20,8 +22,9 @@ This repository contains examples and tutorials for mastering big data processin
 
 ## Prerequisites
 
-- Python 3.x
-- PySpark
+- Java 21
+- Python 3.12
+- PySpark 4.0.1
 - Jupyter Notebook (optional)
 
 ## License
