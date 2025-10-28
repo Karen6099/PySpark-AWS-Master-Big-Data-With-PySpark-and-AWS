@@ -1,73 +1,105 @@
-# PySpark-AWS-Master-Big-Data-With-PySpark-and-AWS
+# PySpark Big Data Learning Repository
 
-Learning repository with PySpark examples and notebooks sourced from the Udemy course:
-https://www.udemy.com/course/pyspark-aws-master-big-data-with-pyspark-and-aws/
+A comprehensive collection of PySpark examples and notebooks covering RDD operations, DataFrame manipulations, ETL processes, collaborative filtering, and streaming.
 
-This repo holds example Jupyter notebooks and sample data used while following the course. The README below has been updated to reflect the current files in the workspace.
+## 📁 Project Structure
 
-## Project structure (current)
-
-- `notebooks/` — Jupyter notebooks with PySpark examples and exercises
-- `data/` — sample input files used by the notebooks
-- `Output_WordCount/` — output directory produced by some wordcount examples
-- `README.md` — this file
-
-## Notebooks (what's included)
-
-- `My First Notebook.ipynb` — basic PySpark setup and simple RDD examples
-- `Map.ipynb` — examples demonstrating the `map` transformation
-- `Map_Quiz.ipynb` — quiz / exercise using `map`
-- `FlatMap.ipynb` — examples demonstrating `flatMap` on RDDs
-- `Filter.ipynb` — using `filter` to remove unwanted elements from RDDs
-- `Filter_Quiz.ipynb` — filter exercises/quizzes
-- `GroupByKey.ipynb` — grouping data by key (RDD pair RDD examples)
-- `ReduceByKey.ipynb` — aggregation examples using `reduceByKey`
-- `WordCount.ipynb` — classic word count example (reads text, counts words)
-- `Count.ipynb` — notebooks demonstrating counting operations (e.g., count, countByValue)
-- `Distinct.ipynb` — shows how to get distinct elements from an RDD
-- `SaveAsTextFile.ipynb` — saving results to text files (e.g., output directory)
-
-## Data files (in `data/`)
-
-- `Sample.txt` — small sample text file used in introductory examples
-- `Sample_words.txt` — small word-sample file used in mapping/splitting examples
-- `Sample_words2.txt` — additional sample words file
-- `Map_Quiz.txt` — sample file used by the `Map_Quiz` exercises
-- `Output_WordCount/` — directory (created by notebooks) that contains output from word count
-- `Output_WordCount.txt/` — (present in repo) may be an exported or checkpointed output directory; inspect or remove if not needed
-
-If you add or remove files from `data/` or `notebooks/`, update this README or the notebooks that reference them.
-
-## Quick start
-
-1. Install required Python packages (recommended in a virtual environment):
-
-```bash
-pip install pyspark
-pip install jupyterlab  # optional
+```
+├── DF/                          # DataFrame Operations
+│   ├── ComprehensiveDataFrameGuide.ipynb
+│   ├── Project.ipynb
+│   ├── Quiz1-4.ipynb
+│   └── data files (StudentData.csv, OfficeData.csv, etc.)
+├── RDD/                         # Resilient Distributed Datasets
+│   ├── notebooks/
+│   │   ├── Count.ipynb
+│   │   ├── Map.ipynb
+│   │   ├── Filter.ipynb
+│   │   ├── WordCount.ipynb
+│   │   └── 10+ more notebooks
+│   └── data/
+├── ETL/                         # Extract, Transform, Load
+│   ├── ETL.ipynb
+│   └── data files
+├── Collaborative Filtering/     # Recommendation Systems
+│   ├── collaborativeFiltering.ipynb
+│   └── movie data (movies.csv, ratings.csv)
+└── Spark Streaming/             # Real-time Processing
+    ├── Streaming_RDD.ipynb
+    ├── Streaming_DF.ipynb
+    └── data/
 ```
 
-2. Ensure you have a compatible Java runtime installed (Java 17+ or the version recommended by your PySpark release). On this project we tested with Java 17 and Java 21.
+## 🚀 Quick Start
 
-3. Open the notebooks with Jupyter or VS Code and run cells interactively. For example, to open Jupyter Lab from the repo root:
+### Prerequisites
+- Python 3.11+
+- Java 17+ (for PySpark)
+- PySpark installed
 
+### Installation
+```bash
+pip install pyspark jupyterlab
+```
+
+### Run Examples
 ```bash
 jupyter lab
 ```
+Open any `.ipynb` file and run the cells sequentially.
 
-4. To re-run the WordCount example notebooks, open `WordCount.ipynb` or `SaveAsTextFile.ipynb` and follow the cells. Some examples will write results to `Output_WordCount/`.
+## 📚 Learning Modules
 
-## Notes and recommendations
+### 1. RDD Operations
+- Basic transformations: `map`, `filter`, `flatMap`
+- Aggregations: `reduceByKey`, `groupByKey`
+- Actions: `count`, `collect`, `saveAsTextFile`
+- Word count examples and quizzes
 
-- Use Python 3.11 or 3.12 for best compatibility with PySpark 4.x.
-- If you plan to run larger examples on AWS (EMR / Glue / Databricks), adapt the cluster config and dependencies accordingly.
-- Remove or archive large output directories (like `Output_WordCount/`) from the repo if you don't want them tracked by git.
+### 2. DataFrame Operations
+- Creating DataFrames from CSV/RDD
+- Schema management and data types
+- Column operations: `select`, `withColumn`, `withColumnRenamed`
+- Filtering and aggregations
+- Comprehensive guide with examples
 
-## Contributing and next steps
+### 3. ETL Pipeline
+- Extract: Reading text files
+- Transform: Splitting, exploding, counting words
+- Load: Saving to CSV (with PostgreSQL JDBC option)
 
-- If you add new notebooks, add a short line to the Notebooks section above describing the purpose.
-- Consider adding a `requirements.txt` or `pyproject.toml` if you want to pin dependencies for reproducible runs.
+### 4. Collaborative Filtering
+- Movie recommendation system
+- User-item rating analysis
+- Matrix factorization concepts
 
-## License
+### 5. Spark Streaming
+- Real-time data processing
+- DStream operations
+- Structured Streaming with DataFrames
 
-Educational content / personal repo. Use for learning purposes.
+## 🎯 Key Features
+
+- ✅ **Hands-on Examples**: Each concept demonstrated with working code
+- ✅ **Progressive Learning**: From basic RDDs to advanced streaming
+- ✅ **Real Datasets**: Movie ratings, student data, office data
+- ✅ **Quizzes & Exercises**: Test your understanding
+- ✅ **Production Ready**: Includes error handling and best practices
+
+## 📖 Usage Tips
+
+- Start with `RDD/notebooks/My First Notebook.ipynb` for basics
+- Use `DF/ComprehensiveDataFrameGuide.ipynb` as DataFrame reference
+- Run ETL pipeline in `ETL/ETL.ipynb` for complete workflow
+- Check output files in respective directories after running notebooks
+
+## 🔧 Troubleshooting
+
+- **Java Errors**: Ensure Java 17+ is installed and `JAVA_HOME` is set
+- **File Permission Issues**: Close CSV files before running notebooks
+- **Memory Issues**: Reduce data size or increase Spark memory settings
+- **PostgreSQL JDBC**: Download driver JAR for database connectivity
+
+---
+
+*Based on Udemy course: [PySpark & AWS: Master Big Data with PySpark and AWS](https://www.udemy.com/course/pyspark-aws-master-big-data-with-pyspark-and-aws/)*
